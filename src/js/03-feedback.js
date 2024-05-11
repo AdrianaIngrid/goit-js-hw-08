@@ -1,5 +1,5 @@
 
-const throttle = require('lodash.throttle');
+const _ = require('lodash');
 const formFeedback = document.querySelector('.feedback-form');
 formFeedback.addEventListener(
   'input',

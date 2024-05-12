@@ -1,10 +1,9 @@
-
-const _ = require('lodash');
+import throttle from 'lodash.throttle';
 const formFeedback = document.querySelector('.feedback-form');
 formFeedback.addEventListener(
   'input',
-  
-  _.throttle(() => {
+
+  throttle(() => {
     const formInfo = {
       email: formFeedback.elements.email.value,
       message: formFeedback.elements.message.value,
@@ -14,6 +13,7 @@ formFeedback.addEventListener(
 );
 document.addEventListener('DOMContentLoaded', () => {
   const parsedInfo = JSON.parse(localStorage.getItem('feedback-form-state'));
+  console.log(parsedInfo);
   if (!parsedInfo) {
     formFeedback.elements.email.value = '';
     formFeedback.elements.message.value = '';
